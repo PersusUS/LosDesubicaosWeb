@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Blackhole Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 4rem;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .hero .title.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <video id="blackholeVideo" autoplay muted>
+            <source src="blackhole.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="title" id="heroTitle">LOS DESUBICAOS</div>
+    </div>
+
+    <script>
+        const video = document.getElementById('blackholeVideo');
+        const title = document.getElementById('heroTitle');
+        let loopCount = 0;  // Count how many times the reverse loop has run
+
+        // Show title after 25 seconds
+        setTimeout(() => {
+            title.classList.add('show');
+        }, 25000); // 25000 milliseconds = 25 seconds
+
+        // When the video ends the first time
+        video.addEventListener('ended', () => {
+            if (loopCount === 0) {
+                // First reverse play for 5 seconds
+                reverseVideoFor5Seconds();
+            } else if (loopCount === 1) {
+                // Play forward after the first reverse
+                playForwardAfterReverse();
+            } else if (loopCount === 2) {
+                // Final reverse after the second forward playback
+                reverseVideoFor5Seconds();
+            }
+        });
+
+        // Rewind the video for 5 seconds in reverse
+        function reverseVideoFor5Seconds() {
+            const reverseStartTime = video.duration;  // Start from the end of the video
+            const reverseEndTime = video.duration - 5;  // Rewind for 5 seconds
+            video.currentTime = reverseStartTime;
+            video.playbackRate = -1;  // Reverse playback
+            video.play();
+            loopCount++;  // Increment loop count
+
+            // Check the current time during reverse
+            const reverseInterval = setInterval(() => {
+                if (video.currentTime <= reverseEndTime) {
+                    video.pause();  // Pause when reverse is done
+                    video.playbackRate = 1;  // Reset to forward playback rate
+                    clearInterval(reverseInterval);  // Clear the interval
+                }
+            }, 100);  // Check every 100ms
+        }
+
+        // Play the video forward after reverse
+        function playForwardAfterReverse() {
+            const forwardStartTime = video.duration - 5;  // Start from where reverse ended
+            video.currentTime = forwardStartTime;
+            video.playbackRate = 1;  // Forward playback
+            video.play();
+            loopCount++;  // Increment loop count
+        }
+
+    </script>
+
+</body>
+</html>
