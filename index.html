@@ -4,41 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackhole</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            background-color: black; /* Ensure full black background */
-        }
-
-        /* Hero Section */
-        .home_hero--wrapper {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Content after video */
-        .content {
-            height: 200vh; /* Simulate a longer content section */
-            background: #000000;
-            padding: 50px;
-            font-size: 1.5em;
-            color: white; /* White text for content */
-            display: none; /* Initially hidden */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -49,10 +15,15 @@
 
     <!-- Content After Video -->
     <div class="content" id="content">
-        <h1>Welcome to the content section!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h1 class="title">ExoExploration by Los Desubicaos</h1>
+        <div class="imagenes">
+            <p class="informacion" >Este juego ha sido creado con mucho cariño por un grupo de estudiantes con el objetivo de la explicar que son los exoplanetas y a la misma vez que sea una experiencia agradable para cualquiera.
+                jsgdgehdwgyuqfyuwehudchashfdhehdadhagfhahdhadg dgbaydyuwgdva agydyuadf gwqdh  dqdgawd gwdgad dwadg dygw gdwagdyuag gagdadg yadagd.
+            </p>
+            <img src="imagenes-espacio-2.jpg" alt="">
+        </div>
+        
     </div>
-
     <!-- GSAP and ScrollTrigger CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
