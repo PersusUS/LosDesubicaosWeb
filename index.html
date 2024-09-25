@@ -3,109 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Blackhole Website</title>
+    <title>Blackhole</title>
     <style>
-        * {
+        body, html {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            overflow-x: hidden;
+            background-color: black; /* Ensure full black background */
         }
-        body, html {
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
+
+        /* Hero Section */
+        .home_hero--wrapper {
+            position: relative;
+            height: 100vh;
             overflow: hidden;
         }
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-        }
-        .hero video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .hero .title {
+
+        video {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
-            font-size: 4rem;
-            opacity: 0;
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .hero .title.show {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.1);
+
+        /* Content after video */
+        .content {
+            height: 200vh; /* Simulate a longer content section */
+            background: #000000;
+            padding: 50px;
+            font-size: 1.5em;
+            color: white; /* White text for content */
+            display: none; /* Initially hidden */
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <video id="blackholeVideo" autoplay muted>
-            <source src="blackhole.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="title" id="heroTitle">LOS DESUBICAOS</div>
+    <!-- Hero Wrapper with Video -->
+    <section class="home_hero--wrapper">
+        <video id="hero-video" src="blackhole.mp4" autoplay muted loop></video>
+    </section>
+
+    <!-- Content After Video -->
+    <div class="content" id="content">
+        <h1>Welcome to the content section!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
 
+    <!-- GSAP and ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script>
-        const video = document.getElementById('blackholeVideo');
-        const title = document.getElementById('heroTitle');
-        let loopCount = 0;  // Count how many times the reverse loop has run
+        // GSAP Animation for Dynamic Zoom In on Scroll
+        gsap.registerPlugin(ScrollTrigger);
 
-        // Show title after 25 seconds
-        setTimeout(() => {
-            title.classList.add('show');
-        }, 25000); // 25000 milliseconds = 25 seconds
-
-        // When the video ends the first time
-        video.addEventListener('ended', () => {
-            if (loopCount === 0) {
-                // First reverse play for 5 seconds
-                reverseVideoFor5Seconds();
-            } else if (loopCount === 1) {
-                // Play forward after the first reverse
-                playForwardAfterReverse();
-            } else if (loopCount === 2) {
-                // Final reverse after the second forward playback
-                reverseVideoFor5Seconds();
+        gsap.to("#hero-video", {
+            scale: 20, // Even deeper zoom into the black hole
+            opacity: 0, // Fade out to black as you zoom in
+            ease: "power2.inOut", // Dynamic easing for a more fluid zoom
+            scrollTrigger: {
+                trigger: ".home_hero--wrapper",
+                start: "top top",
+                end: "bottom+=200 center", // Extend the scroll distance for a deeper zoom
+                scrub: true, // Smooth syncing with scroll
+                pin: true, // Pin the video until the zoom completes
+                onLeave: () => {
+                    // Show the content after the zoom finishes
+                    document.getElementById('content').style.display = 'block';
+                }
             }
         });
-
-        // Rewind the video for 5 seconds in reverse
-        function reverseVideoFor5Seconds() {
-            const reverseStartTime = video.duration;  // Start from the end of the video
-            const reverseEndTime = video.duration - 5;  // Rewind for 5 seconds
-            video.currentTime = reverseStartTime;
-            video.playbackRate = -1;  // Reverse playback
-            video.play();
-            loopCount++;  // Increment loop count
-
-            // Check the current time during reverse
-            const reverseInterval = setInterval(() => {
-                if (video.currentTime <= reverseEndTime) {
-                    video.pause();  // Pause when reverse is done
-                    video.playbackRate = 1;  // Reset to forward playback rate
-                    clearInterval(reverseInterval);  // Clear the interval
-                }
-            }, 100);  // Check every 100ms
-        }
-
-        // Play the video forward after reverse
-        function playForwardAfterReverse() {
-            const forwardStartTime = video.duration - 5;  // Start from where reverse ended
-            video.currentTime = forwardStartTime;
-            video.playbackRate = 1;  // Forward playback
-            video.play();
-            loopCount++;  // Increment loop count
-        }
-
     </script>
 
 </body>
