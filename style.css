@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     background-color: black; /* Ensure full black background */
+  
 }
 
 /* Hero Section */
@@ -26,15 +27,27 @@ video {
 .content {
     height: 200vh; /* Simulate a longer content section */
         margin: 0;
-        height: 300vh;
+        height: 250vh;
         background: 
-        radial-gradient(circle at 20% 30%, rgba(255, 239, 13, 0.5) 1px, transparent 1px) 0px 0px / 100px 100px, /* Estrellas pequeñas */
-        radial-gradient(circle at 50% 80%, rgba(255, 183, 28, 0.6) 2px, transparent 2px) 0px 0px / 150px 150px, /* Estrellas medianas */
-        radial-gradient(circle at 70% 20%, rgba(233, 71, 31, 0.7) 3px, transparent 3px) 0px 0px / 200px 200px, /* Estrellas grandes */
-        linear-gradient(to bottom, #000000, #010124, #020a49); /* Capa de gradiente */
+
+        linear-gradient(to bottom, #000000, #201902, #1f1703); /* Capa de gradiente */
       
     
 }
+.stars {
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .star {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efecto brillante */
+  }
 .title{
     font-size: 4em;
     color: white; /* White text for content */
@@ -60,6 +73,25 @@ video {
         height: 400px;
         padding-right: 30px;
       }
+      .descarga{
+        color: white;
+        font-size: 3em;
+        margin-left: 30px;
+      }
+      .Enlace{
+        color: white;
+        font-size: 2em;
+        margin-left: 40px;
+      }
+      @keyframes twinkle {
+        0%, 100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      
 
 
 
