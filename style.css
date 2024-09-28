@@ -28,11 +28,6 @@ video {
     height: 200vh; /* Simulate a longer content section */
         margin: 0;
         height: 250vh;
-        background: 
-
-        linear-gradient(to bottom, #000000, #201902, #1f1703); /* Capa de gradiente */
-      
-    
 }
 .stars {
     position: absolute;
@@ -66,23 +61,14 @@ video {
     display: grid;
     grid-template-columns: auto auto; /* Dos columnas: una para la imagen y otra para el texto */
     align-items: center; /* Alinea los elementos en el centro verticalmente */
-    gap: 10px; /* Espacio entre la imagen y el texto */ 
+    gap: 10px; /* Espacio entre la imagen y el texto */
 }
     img {
         width: 800px; /* Ajusta el tamaño de la imagen */
         height: 400px;
         padding-right: 30px;
       }
-      .descarga{
-        color: white;
-        font-size: 3em;
-        margin-left: 30px;
-      }
-      .Enlace{
-        color: white;
-        font-size: 2em;
-        margin-left: 40px;
-      }
+      
       @keyframes twinkle {
         0%, 100% {
           opacity: 0.3;
@@ -91,8 +77,57 @@ video {
           opacity: 1;
         }
       }
-      
+      .descarga{
+        color: white;
+        font-size: 3em;
+        margin-left: 400px;
+        
+      }
+      .Enlace{
+        margin-left: 10px;
+        color: white;
+        font-size: 2em;
 
+      }.circle {
+        width: 75px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #dfd3d3; /* Color del círculo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-top: 20px;
+        margin-left: 45%;
+        
+      }
+      
+      .download-arrow {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 20px solid white; /* Color de la flecha */
+        position: relative;
+      }
+      
+      .download-arrow::after {
+        content: "";
+        width: 10px;
+        height: 40px;
+        background-color: white;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+.Copyrigth{
+  margin-top: 10%;
+  color: white;
+  margin-left: 5%;
+  font-size:1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;}
 
 
 
