@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackhole</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,20 +21,60 @@
 
     <!-- Content After Video -->
     <div class="content" id="content">
-        <h1 class="title">ExoExploration by Los Desubicaos</h1>
+        <h1 class="title">ExoExploration </h1>
         <div class="imagenes">
-            <p class="informacion" >Este juego ha sido creado con mucho cariño por un grupo de estudiantes con el objetivo de la explicar que son los exoplanetas y a la misma vez que sea una experiencia agradable para cualquiera.
+            <p class="informacion" >Este juego ha sido creado con mucho cariño por un grupo de estudiantes con la intencion de que las personas aprendan mas sobre exoplanetas y a la misma vez que sea una experiencia agradable para cualquiera.
             Un juego divertido con puzzles inspirado  en el descubrimiento de planetas y en un hombre que ha perdido a su hija e intenta encontrarla.
             </p>
-            <img src="imagenes-espacio-2.jpg" alt="">
+            
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <!-- Cada div con clase "slide" es una imagen o contenido en el deslizador -->
+                <div class="slide active" >
+                    <img src="img1.jpg" alt="">
+                </div>
+                <div class="slide" >
+                    <img class="imagen2" src="img2.jpg" alt="">
+                </div>
+                <div class="slide" >
+                    <img src="img3.jpg" alt="">
+                </div>
+            </div>
+            
+            <!-- Botones de navegación -->
+            <div class="slider-navigation">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+    
+            <!-- Indicadores de las diapositivas -->
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
         <div class="stars"></div>
         <script src="stars.js"></script>
         <h2 class="descarga">Descarga para Windows</h2>
-        <div class="circle">
-            <a href="https://www.youtube.com/" class="download-arrow"></a>
+        <div class="container">
+            <a href="archivo.zip" download class="download-btn">
+                <span class="btn-text">Descargar</span>
+                <span class="btn-icon">⬇</span>
+            </a>
         </div>
-        <div class=""></div>
+        
+        <div class="Equipo">
+            <h2 class="nombre">Los Desubicaos</h2>
+            <p class="Integrantes">
+            -Marco Romero Molina
+            -Jesus Perez Bazarot
+
+        </p>
+        </div>
+    
+        <script src="script.js"></script>
     </div>
     <!-- GSAP and ScrollTrigger CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

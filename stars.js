@@ -1,5 +1,5 @@
 const starContainer = document.querySelector('.stars');
-const numberOfStars = 250; // Ajusta según lo que desees
+const numberOfStars = 300; // Ajusta según lo que desees
 
 function createStar() {
   const star = document.createElement('div');
