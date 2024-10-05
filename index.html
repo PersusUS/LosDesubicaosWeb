@@ -1,10 +1,11 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackhole</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -23,110 +24,171 @@
     <div class="content" id="content">
         <h1 class="title">The Event Horizon </h1>
         <div class="imagenes">
-            <p class="informacion">Este juego ha sido creado con mucho cariño por un grupo de estudiantes con la intención de que las personas aprendan más sobre exoplanetas, siendo una experiencia agradable para cualquiera. Un juego divertido con puzzles inspirado en el descubrimiento de planetas y un hombre que ha perdido a su hija e intenta encontrarla.</p>
+            <p class="informacion">This game has been lovingly created by a group of students with the intention of helping people learn more about exoplanets, offering an enjoyable experience for everyone. A fun game with puzzles inspired by the discovery of planets and about a man who has lost his daughter and is trying to find her.</p>
         </div>
 
-        <!-- Slider Section -->
-        <div class="slider">
-            <div class="slide active fade">
-                <img src="img1.jpg" alt="">
-            </div>
-            <div class="slide fade">
-                <img src="img2.jpg" alt="">
-            </div>
-            <div class="slide fade">
-                <img src="img3.jpg" alt=""> 
-            </div>
 
-            <!-- Navigation buttons -->
-            <div class="slider-navigation">
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
-            </div>
-
-            <!-- Slide dots -->
-            <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
+        <div class="carousel-container">
+          <div class="carousel">
+              <div class="slide active">
+                  <img src="Anotación 2024-10-05 151704.jpg" alt="Imagen 1">
+              </div>
+              <div class="slide">
+                  <img src="Anotación 2024-10-05 151704 2.jpg" alt="Imagen 2">
+              </div>
+              <div class="slide">
+                  <img src="Anotación 2024-10-05 151704 3.jpg" alt="Imagen 3">
+              </div>
+          </div>
+          <div class="controls">
+              <button class="prev">&#10094;</button>
+              <button class="next">&#10095;</button>
+          </div>
         </div>
-        <div class="accesoBeta">
-            <h2>Solicita Acceso a la Beta</h2>
+        <!--Seccion para pedir el juego-->
+        <div>
+        <h2 class="Descargar">Download</h2>
+        <div class="download-container">
+          <a href="archivo.zip" download class="download-btn">
+              <span class="btn-text">Descargar</span>
+              <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v6h16v-6"/><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/></svg>
+          </a>
+      </div>
         </div>
-        <!--Seccion para pedir el juego--> 
-        <div class="form-container">
-            
-            <form action="mailto:tucorreo@ejemplo.com" method="post" enctype="text/plain">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-        
-                <label for="apellidos">Apellidos:</label>
-                <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
-        
-                <label for="edad">Edad:</label>
-                <input type="number" id="edad" name="edad" min="1" placeholder="Tu edad" required>
-        
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" id="correo" name="correo" placeholder="Tu correo" required>
-        
-                <label for="razon">¿Por qué quieres acceder a la beta?</label>
-                <textarea id="razon" name="razon" rows="4" placeholder="Escribe tu razón" required></textarea>
-        
-                <button type="submit">Enviar Solicitud</button>
-            </form>
-            <div class="contenedor">
-                <h3>Contenedor 2</h3>
-                <p class="texto">Nuestro juego aún no lo tenemos al completo ya que conlleva mucho trabajo por nuestra parte para terminarlo. Aún así hemos conseguido tener una beta de este, y puedes solicitar acceso a ella mediante este formulario. Muchas gracias espero que te animes a solicitarlo y lo disfrutes.</p>
-                <img src="logo juego.jpg" alt="" class="logoJuego">
-            </div>
-        </div>
-        
         <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img class="logo" src="Logo 1.png">
         </div>
-
         <!-- Team section -->
-        <div class="Equipo">
-            <h2 class="nombre">Los Desubicaos</h2>
-            <p class="Integrantes">
-                - Marco Romero Molina<br>
-                - Jesus Perez Bazarot<br>
-                - Laura
-            </p>
-        </div>
-        <!-- Stars background -->
+        <div class="responsive-container-block outer-container">
+            <div class="nombre"><h2>Los Desubicaos</h2></div>
+            <div class="responsive-container-block inner-container">
+              <div class="responsive-cell-block wk-desk-8 wk-ipadp-8 wk-tab-12 wk-mobile-12 team-members-container">
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-mobile-12 wk-tab-12 card-container">
+                  <div class="card">
+                    <img class="card-img" src="IMG_5938 (1).jpeg">
+                    <p class="text-blk name">
+                      Marcos Ruiz Lerma
+                    </p>
+                    <p class="text-blk position">
+                      VideoGame Designer
+                    </p>
+                  </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-mobile-12 wk-tab-12 card-container">
+                  <div class="card">
+                    <img class="card-img" src="IMG_5934 (1).jpeg">
+                    <p class="text-blk name">
+                      Laura Temblador Del Campo
+                    </p>
+                    <p class="text-blk position">
+                      Script Writter and Researcher
+                    </p>
+                  </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-mobile-12 wk-tab-12 card-container">
+                  <div class="card">
+                    <img class="card-img" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ft14.svg">
+                    <p class="text-blk name">
+                      Abril Monteagudo Cid
+                    </p>
+                    <p class="text-blk position">
+                      Creative director
+                    </p>
+                  </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-mobile-12 wk-tab-12 card-container">
+                  <div class="card">
+                    <img class="card-img" src="IMG_5932 (1).jpeg">
+                    <p class="text-blk name">
+                      Jesús Pérez Bazarot
+                    </p>
+                    <p class="text-blk position">
+                      CEO
+                    </p>
+                  </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-mobile-12 wk-tab-12 card-container">
+                  <div class="card">
+                    <img class="card-img" src="IMG_5936 (1).jpeg">
+                    <p class="text-blk name">
+                      Dario Fuenemayor Catalani
+                    </p>
+                    <p class="text-blk position">
+                      Composer and Sound Designer
+                    </p>
+                  </div>
+                </div>
+                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-mobile-12 wk-tab-12 card-container">
+                  <div class="card">
+                    <img class="card-img" src="IMG_5939.jpg">
+                    <p class="text-blk name">
+                      Marco Romero Molina
+                    </p>
+                    <p class="text-blk position">
+                        Web designer
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Stars background -->
         <div class="stars"></div>
+        <script src="stars.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+          
+          <script src="script.js"></script>
+          <script>
+              gsap.registerPlugin(ScrollTrigger);
+          
+              // Detectar si es un dispositivo móvil
+              const isMobile = window.innerWidth <= 768;
+          
+              try {
+                  // Configuración de la animación GSAP
+                  gsap.to("#hero-video", {
+                      scale: isMobile ? 10 : 20, // Menor zoom en móviles para evitar problemas de rendimiento
+                      opacity: 0,
+                      ease: "power2.inOut",
+                      scrollTrigger: {
+                          trigger: ".home_hero--wrapper",
+                          start: "top top",
+                          end: isMobile ? "bottom+=100 center" : "bottom+=200 center", // Ajustar para móviles
+                          scrub: true,
+                          pin: true,
+                          invalidateOnRefresh: true, // Recalcula valores al cambiar tamaño de la pantalla
+                          onLeave: () => {
+                              // Mostrar contenido al terminar el zoom
+                              document.getElementById('content').style.display = 'block';
+                          }
+                      }
+                  });
+          
+                  // Recalcular al cambiar la orientación o tamaño en móviles
+                  window.addEventListener("resize", () => {
+                      ScrollTrigger.refresh();
+                  });
+          
+              } catch (error) {
+                  console.error("Error en la animación de GSAP:", error);
+              }
+          </script>
+          
+          <style>
+              /* Asegurarse de que el contenido esté oculto inicialmente */
+              #content {
+                  display: none;
+              }
+          
+              /* Optimización de rendimiento para móviles */
+              #hero-video {
+                  will-change: transform, opacity;
+              }
+          </style>
     </div>
-
-    <!-- GSAP and ScrollTrigger CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <script src="script.js"></script>
-    <script>
-        // GSAP Animation for Dynamic Zoom In on Scroll
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to("#hero-video", {
-            scale: 20, // Even deeper zoom into the black hole
-            opacity: 0, // Fade out to black as you zoom in
-            ease: "power2.inOut", // Dynamic easing for a more fluid zoom
-            scrollTrigger: {
-                trigger: ".home_hero--wrapper",
-                start: "top top",
-                end: "bottom+=200 center", // Extend the scroll distance for a deeper zoom
-                scrub: true, // Smooth syncing with scroll
-                pin: true, // Pin the video until the zoom completes
-                onLeave: () => {
-                    // Show the content after the zoom finishes
-                    document.getElementById('content').style.display = 'block';
-                }
-            }
-        });
-    </script>
     <footer class="Copyrigth">
-        <p> Todos los derechos reservados - © Los Desubicaos 2024 </p>
+        <p> All rigths reserved  - © Los Desubicaos 2024 </p>
     </footer>
 </body>
 </html>

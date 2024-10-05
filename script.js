@@ -1,64 +1,26 @@
-const slides = document.querySelectorAll('.slide');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-const dots = document.querySelectorAll('.dot');
-
 let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        dots[i].classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
-            dots[i].classList.add('active');
-        }
-    });
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-}
-
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-}
-
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        showSlide(index);
-        currentIndex = index;
-    });
+document.querySelector('.next').addEventListener('click', () => {
+    moveToNextSlide();
 });
 
-// Star animation
-const starContainer = document.querySelector('.stars');
-const numberOfStars = 600;
+document.querySelector('.prev').addEventListener('click', () => {
+    moveToPrevSlide();
+});
 
-function createStar() {
-    const star = document.createElement('div');
-    star.classList.add('star');
-  
-    const size = Math.random() * 3 + 1;
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-  
-    star.style.top = `${Math.random() * 300}vh`;
-    star.style.left = `${Math.random() * 200}vw`;
-
-    star.style.opacity = Math.random();
-
-    starContainer.appendChild(star);
-
-    const twinkleDuration = Math.random() * 5 + 2;
-    star.style.animation = `twinkle ${twinkleDuration}s infinite ease-in-out`;
+function moveToNextSlide() {
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % totalSlides;
+    slides[currentIndex].classList.add('active');
 }
 
-for (let i = 0; i < numberOfStars; i++) {
-    createStar();
+function moveToPrevSlide() {
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    slides[currentIndex].classList.add('active');
 }
+
+// Cambio automático de las imágenes cada 3 segundos
+setInterval(moveToNextSlide, 3000);
