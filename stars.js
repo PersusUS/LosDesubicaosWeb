@@ -11,8 +11,8 @@ function createStar() {
   star.style.height = `${size}px`;
   
   // Posición aleatoria en la pantalla después del espacio vacío
-  star.style.top = `${Math.random() * 1000}vh`; // Esto asegura que solo estén en la sección de estrellas
-  star.style.left = `${Math.random() * 175}vw`;
+  star.style.top = `${Math.random() * 850}vh`; // Esto asegura que solo estén en la sección de estrellas
+  star.style.left = `${Math.random() * 100}vw`;
 
   // Opacidad aleatoria para simular diferentes brillos
   star.style.opacity = Math.random();

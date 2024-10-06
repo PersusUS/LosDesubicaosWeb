@@ -7,10 +7,6 @@ body, html {
     box-sizing: border-box;
     height: auto;
 }
-* {
-  max-width: 100vw;  /* Impide que cualquier elemento sobrepase el ancho de la pantalla */
-  box-sizing: border-box; /* Aplica box-sizing a todos los elementos para un mejor control */
-}
 
 /* Hero Section */
 .home_hero--wrapper {
@@ -368,6 +364,7 @@ h3{
 
   .links a {
     font-size: 1em;  /* Ajusta el tamaño del texto de los enlaces para móviles */
+    
   }
 }
 
