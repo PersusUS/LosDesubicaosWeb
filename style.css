@@ -32,19 +32,10 @@ video {
     height: auto; /* Ensure dynamic height */
 }
 
-.title {
-    font-size: 5em;
-    color: white;
-    text-align: center;
-    font-family: "Bebas Neue", sans-serif;
-}
-
 .informacion {
     color: rgb(255, 255, 255);
     text-align: center;
-    font-size: 2em;
     margin: 40px;
-    font-family: "Poppins", sans-serif;
 }
 
 
@@ -111,14 +102,6 @@ button.next {
   justify-content: center;
   align-items: center;
 }
-.Descargar{
-  color: white;
-  font-size: 3em;
-  text-align: center;
-  font-family: "Bebas Neue", sans-serif;
-
-  
-}
 .download-btn {
   display: inline-flex;
   align-items: center;
@@ -169,14 +152,10 @@ button.next {
 .download-btn:hover::before {
   transform: translate(-50%, -50%) scale(1);
 }
-
-.nombre {
-    font-family: "Poppins", sans-serif;
-    font-size: 3em;
-    text-align: center;
-    font-family: "Bebas Neue", sans-serif;
-    color: white;
+.Musica{
+  text-align: center;
 }
+
 .text-blk {
   margin: 0;
   padding: 10px;
@@ -214,9 +193,7 @@ button.next {
 }
 
 .name {
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 24px;
   padding: 15px 10px 5px 0;
   margin: 0;
@@ -320,7 +297,6 @@ button.next {
   }
 
   .heading-text {
-      font-size: 40px;
       line-height: 45px;
   }
 
@@ -329,8 +305,67 @@ button.next {
       min-width: auto;
   }
 }
+p{
+  font-size:1.5em ;
+  font-family: "Poppins", sans-serif;
+}
+
+h1{
+  font-family: "Bebas Neue", sans-serif;
+  color: wheat;
+  font-size: 5em;
+  text-align: center;
+
+}
+h2{
+  font-family: "Bebas Neue", sans-serif;
+  color: wheat;
+  font-size: 4em;
+  text-align: center;
+}
+h3{
+  font-family: "Bebas Neue", sans-serif;
+  color: wheat;
+  font-size: 3em;
+  margin-right:30px;
+}
+.links {
+  max-width: 100%;   /* Se ajusta al 100% del ancho del contenedor padre */
+  padding: 10px;     /* Espaciado interno para que no quede pegado a los bordes */
+  margin: 0 auto;    /* Centra el contenedor en la pantalla */
+}
+
+/* Asegura que los enlaces estén alineados a la izquierda */
+.links a {
+  display: block;    /* Hace que cada enlace ocupe toda la línea */
+  text-align: center;  /* Alinea el texto del enlace a la izquierda */
+  color: #0066cc;    /* Color del enlace */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  margin: 5px 0;     /* Margen entre los enlaces para mayor separación */
+  font-size: 1.5em;
+}
+
+.links a:hover {
+  text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
+
+/* Estilo del título de la sección "Bibliografía" */
 
 
+/* Media Query para móviles */
+@media (max-width: 600px) {
+  .links {
+    padding: 5px;   /* Reduce el espaciado interno en pantallas pequeñas */
+  }
+  
+  .links h2 {
+    font-size: 1.2em; /* Reduce el tamaño del título en pantallas pequeñas */
+  }
+
+  .links a {
+    font-size: 1em;  /* Ajusta el tamaño del texto de los enlaces para móviles */
+  }
+}
 
 .Copyrigth {
     color: white;
@@ -355,7 +390,6 @@ button.next {
     width: 100%;
     height: 100%;
     z-index:1;
-    
 }
 
 .star {
@@ -376,12 +410,8 @@ button.next {
 
 /* Responsive Fixes */
 @media (max-width: 768px) {
-    .title {
-        font-size: 2.5em;
-    }
 
     .informacion {
-        font-size: 1.2em;
         margin: 20px;
     }
 
@@ -396,14 +426,5 @@ button.next {
 
     .download-btn {
         margin-left: 0;
-    }
-
-    .nombre {
-        font-size: 2em;
-    }
-
-    .Integrantes {
-        font-size: 1.5em;
-
     }
 }

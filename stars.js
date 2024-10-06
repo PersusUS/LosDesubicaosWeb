@@ -1,5 +1,5 @@
 const starContainer = document.querySelector('.stars');
-const numberOfStars = 300; // Ajusta según lo que desees
+const numberOfStars = 800; // Ajusta según lo que desees
 
 function createStar() {
   const star = document.createElement('div');
@@ -11,7 +11,7 @@ function createStar() {
   star.style.height = `${size}px`;
   
   // Posición aleatoria en la pantalla después del espacio vacío
-  star.style.top = `${Math.random() * 475}vh`; // Esto asegura que solo estén en la sección de estrellas
+  star.style.top = `${Math.random() * 1000}vh`; // Esto asegura que solo estén en la sección de estrellas
   star.style.left = `${Math.random() * 175}vw`;
 
   // Opacidad aleatoria para simular diferentes brillos

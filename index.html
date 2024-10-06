@@ -14,15 +14,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <!-- Hero Wrapper with Video -->
     <section class="home_hero--wrapper">
-        <video id="hero-video" src="blackhole.mp4" autoplay muted loop></video>
+        <video id="hero-video" src="blackhole.mp4" playsinline autoplay muted loop></video>
     </section>
 
     <!-- Content After Video -->
     <div class="content" id="content">
-        <h1 class="title">The Event Horizon </h1>
+        <h1>The Event Horizon </h1>
         <div class="imagenes">
             <p class="informacion">This game has been lovingly created by a group of students with the intention of helping people learn more about exoplanets, offering an enjoyable experience for everyone. A fun game with puzzles inspired by the discovery of planets and about a man who has lost his daughter and is trying to find her.</p>
         </div>
@@ -49,17 +48,21 @@
         <div>
         <h2 class="Descargar">Download</h2>
         <div class="download-container">
-          <a href="archivo.zip" download class="download-btn">
-              <span class="btn-text">Descargar</span>
+          <a href="Game.zip" download class="download-btn">
+              <span class="btn-text">Download</span>
               <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v6h16v-6"/><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/></svg>
           </a>
+      </div>
+      <div class="Musica">
+        <h2>Our own soundtrack </h2>
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1a5zSnckSiY?si=Jeks-hXaPN37g5lf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
         </div>
         <div class="logo-container">
             <img class="logo" src="Logo 1.png">
         </div>
         <!-- Team section -->
-        <div class="responsive-container-block outer-container">
+        <d class="responsive-container-block outer-container">
             <div class="nombre"><h2>Los Desubicaos</h2></div>
             <div class="responsive-container-block inner-container">
               <div class="responsive-cell-block wk-desk-8 wk-ipadp-8 wk-tab-12 wk-mobile-12 team-members-container">
@@ -131,10 +134,44 @@
                 </div>
               </div>
             </div>
+            <div class="Extrainformacion">
+              <h2>Proyect Details</h2>
+              <h3>Educational Component of the Game</h3>
+              <p class="muchotexto">
+                The game’s planet discovery system, inspired by real techniques used by space agencies, simplifies complex methodologies. This allows players of all skill levels to understand and engage with the content, offering an accessible astrophysicist experience.
+              </p>
+              <h3>Simulated Astronomical Observation</h3>
+              <p>
+                Players can use an in-game telescope to view a simulated celestial sphere with moving celestial bodies. By zooming in, they can interact with these objects through various mechanics, such as observing a planet transit in front of its star, measuring brightness changes, and capturing images in different light wavelengths. This realistic experience enhances players' understanding of astronomical exploration and the observational techniques used by astrophysicists.
+              </p>
+              <h3>Game Narrative and Educational Goals</h3>
+              <p>
+                In The Event Horizon, you play as an aging researcher residing in a lighthouse on an asteroid, tasked with exploring space. The character faces the dual challenges of a missing daughter and amnesia resulting from an unknown trauma, complicating his quest to find her.
+                </p>
+                <h3>Gameplay and Story Progression</h3>
+                <p>
+                As you progress in the game, you must explore the lighthouse's library to find files on nearby exoplanets to remember your daughter's name. You'll rediscover these planets using real detection techniques akin to those developed by NASA. In the final stages, as you uncover these celestial objects, the mystery of your daughter's fate unfolds, triggering a surge of memories, including her name and her groundbreaking research on black holes. The game skillfully combines a compelling narrative with educational elements, providing an immersive experience that captivates players while teaching real-world scientific principles.
+                </p>
+                <h2>Use of AI</h2>
+                <p>
+                The team consists of seven members, including Perseo, an AI developed by Jesús Pérez Bazarot with capabilities similar to ChatGPT-4. Perseo has acted as an additional team member, refining multilingual English texts and ensuring their sophistication. It also has a programming module that has accelerated web development and a ComfyUI module for generating visual content like images and logos. Overall, Perseo has been a key collaborator, boosting the team's efficiency and helping manage the project's complexity.
+                </p>
+            </div>
+            <div class="links">
+              <h2>Bibliografia</h2>
+              <a  href="https://exoplanetarchive.ipac.caltech.edu/">Archivo de exoplanetas de la NASA</a><br>
+            <a  href="https://science.nasa.gov/exoplanets/facts/">En profundidad - Ciencia de la NASA</a><br>
+            <a  href="https://exoplanets.nasa.gov/alien-worlds/ways-to-find-a-planet/?intent=021">5 maneras de encontrar un planeta
+            </a><br>
+            <a  href="https://esero.es/recurso/modelado-de-transitos-de-exoplanetas/">Modelado de tránsito de exoplanetas
+            </a><br>
+            <a href="https://esero.es/practicas-en-abierto/exoplanetas-primaria/el_mtodo_del_trnsito.html">El método de tránsito - ¿Hay alguien ahí fuera?</a><br>
           </div>
           <!-- Stars background -->
         <div class="stars"></div>
         <script src="stars.js"></script>
+    </div>
+          
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
           
@@ -188,7 +225,7 @@
           </style>
     </div>
     <footer class="Copyrigth">
-        <p> All rigths reserved  - © Los Desubicaos 2024 </p>
+        All rigths reserved  - © Los Desubicaos 2024
     </footer>
 </body>
 </html>
