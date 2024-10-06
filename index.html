@@ -48,7 +48,7 @@
         <div>
         <h2 class="Descargar">Download</h2>
         <div class="download-container">
-          <a href="Game.zip" download class="download-btn">
+          <a href="https://github.com/PersusUS/LosDesubicaosWeb/releases/download/beta/Game.zip" download class="download-btn">
               <span class="btn-text">Download</span>
               <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v6h16v-6"/><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/></svg>
           </a>
@@ -175,43 +175,69 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
           
-          <script src="script.js"></script>
           <script>
-              gsap.registerPlugin(ScrollTrigger);
-          
-              // Detectar si es un dispositivo móvil
-              const isMobile = window.innerWidth <= 768;
-          
-              try {
-                  // Configuración de la animación GSAP
-                  gsap.to("#hero-video", {
-                      scale: isMobile ? 10 : 20, // Menor zoom en móviles para evitar problemas de rendimiento
-                      opacity: 0,
-                      ease: "power2.inOut",
-                      scrollTrigger: {
-                          trigger: ".home_hero--wrapper",
-                          start: "top top",
-                          end: isMobile ? "bottom+=100 center" : "bottom+=200 center", // Ajustar para móviles
-                          scrub: true,
-                          pin: true,
-                          invalidateOnRefresh: true, // Recalcula valores al cambiar tamaño de la pantalla
-                          onLeave: () => {
-                              // Mostrar contenido al terminar el zoom
-                              document.getElementById('content').style.display = 'block';
-                          }
-                      }
-                  });
-          
-                  // Recalcular al cambiar la orientación o tamaño en móviles
-                  window.addEventListener("resize", () => {
-                      ScrollTrigger.refresh();
-                  });
-          
-              } catch (error) {
-                  console.error("Error en la animación de GSAP:", error);
-              }
-          </script>
-          
+            gsap.registerPlugin(ScrollTrigger);
+        
+            // Función para determinar si es un dispositivo móvil
+            const isMobile = () => window.innerWidth <= 768;
+        
+            let scrollDirection = 'down'; // Variable para seguir la dirección del scroll
+            let lastScrollTop = 0; // Última posición de scroll para detectar la dirección
+        
+            const initAnimation = () => {
+                const mobileView = isMobile();
+        
+                // Configuración de la animación GSAP
+                gsap.to("#hero-video", {
+                    scale: mobileView ? 10 : 20, // Menor zoom en móviles para evitar problemas de rendimiento
+                    opacity: 0,
+                    ease: "power2.inOut",
+                    scrollTrigger: {
+                        trigger: ".home_hero--wrapper",
+                        start: "top top",
+                        end: mobileView ? "bottom+=100 center" : "bottom+=200 center", // Ajustar para móviles
+                        scrub: true,
+                        pin: true,
+                        invalidateOnRefresh: true, // Recalcula valores al cambiar tamaño de la pantalla
+                        onUpdate: (self) => {
+                            // Detectar si el scroll va hacia arriba o hacia abajo
+                            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                            if (scrollTop > lastScrollTop) {
+                                scrollDirection = 'down'; // Bajando
+                            } else {
+                                scrollDirection = 'up'; // Subiendo
+                            }
+                            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Asegurarse de no tener valores negativos
+        
+                            // Si está en la parte superior y está haciendo scroll hacia abajo, reinicia la animación
+                            if (scrollDirection === 'up' && scrollTop <= 0) {
+                                ScrollTrigger.refresh(true); // Refrescar ScrollTrigger completamente
+                            }
+                        },
+                        onLeave: () => {
+                            // Mostrar contenido al terminar el zoom
+                            document.getElementById('content').style.display = 'block';
+                        }
+                    }
+                });
+            };
+        
+            try {
+                // Inicializar la animación
+                initAnimation();
+        
+                // Recalcular al cambiar la orientación o tamaño en móviles
+                window.addEventListener("resize", () => {
+                    ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Eliminar triggers anteriores
+                    ScrollTrigger.refresh(); // Refrescar ScrollTrigger
+                    initAnimation(); // Reiniciar la animación
+                });
+        
+            } catch (error) {
+                console.error("Error en la animación de GSAP:", error);
+            }
+        </script>
+        
           <style>
               /* Asegurarse de que el contenido esté oculto inicialmente */
               #content {
